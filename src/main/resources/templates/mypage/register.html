@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www/thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>goodtime24 회원가입</title>
+</head>
+<body>
+<form id="registForm" th:action="@{/register}" method="post">
+
+    <input class="input" type="text" name="userId" placeholder="아이디를 입력해주세요" required/><br/>
+    <input type="password" class="input" name="userPwd" placeholder="비밀번호를 입력해주세요" required/><br/>
+    <input class="input" type="password"  placeholder="비밀번호를 확인해주세요" required/><br/>
+    <input class="input" type="tel" name="userPhone" placeholder="010-1234-5678"  required/><br/>
+    <input class="input" type="text" name="userName" placeholder="이름을 입력해주세요" required/><br/>
+    <input class="input" type="text" name="userRoomNum" placeholder="입원실(근무하시는) 호수를 입력해주세요" required/><br/>
+
+    <div id="errorMessage" style="color:red; display: none; font-size:13px; padding:0 0 15px 0">비밀번호가 일치하지 않습니다 </div>
+    <!--display가 non으로 해서 처음에 보이지 않는다 이건 javascript로 처리한다-->
+    <button class="login-button" type="submit">회원가입</button>
+    <p>
+        <a th:href="@{/terms}">이용약관</a><br><br>
+        <a th:href="@{/law}">개인정보 처리방침</a>
+    </p>
+
+</form>
+
+</body>
+</html>
